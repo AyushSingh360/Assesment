@@ -17,3 +17,8 @@ Heading regex can match numbered list/question lines; tightening heading detecti
 2. Install deps: pip install -r .\requirements.txt
 3. Set UTF-8 and API key: [Console]::OutputEncoding = [System.Text.Encoding]::UTF8; $env:PYTHONUTF8 = '1'; $env:GEMINI_API_KEY='your_api_key'
 4. Run: python .\ingest.py; python -u .\query_rag.py
+
+## 6. Run with Docker
+1. Build image: `docker build -t megamindz-hindi-rag .`
+2. Run container: `docker run --rm -e GEMINI_API_KEY="your_api_key" -v "${PWD}\outputs:/app/outputs" megamindz-hindi-rag`
+
